@@ -1,0 +1,492 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
+
+body {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    direction: rtl;
+    font-family: Rubik;
+    background-color: #FBFCF8;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    padding: 0;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column; /* Arrange elements in a column */
+    align-items: center; /* Center items vertically */
+}
+
+.notActive{
+    cursor:not-allowed;
+}
+
+
+
+.bodysouth {
+    background-image: url('../images/orangeBG.jpg');
+    background-size: cover; /* מכסה את כל המסך */
+    background-repeat: no-repeat; /* לא לחזור על התמונה */
+    height: 100%;
+    width: 100%;
+}
+.bodynorth {
+    background-image: url('../images/blueBG.jpg');
+    background-size: cover; /* מכסה את כל המסך */
+    background-repeat: no-repeat; /* לא לחזור על התמונה */
+    height: 100%;
+    width: 100%;
+}
+.bodygeneral {
+    background-image: url('../images/background.png');
+    background-size: cover; /* מכסה את כל המסך */
+    background-repeat: no-repeat; /* לא לחזור על התמונה */
+    height: 100%;
+    width: 100%;
+}
+/* תפריט ניווט */
+.mainNav > ul > li > a[aria-haspopup="true"]:hover + ul {
+    display: block;
+}
+.mainNav {
+    right: 0px;
+    left: 0px;
+    width: 1280px;
+    position: fixed;
+    top: 0; /* תוסף זה יגרום לתפריט להידבק לחלק העליון של המסך */
+    background-color: #FAECDD;
+    width: 100%;
+    height: 15%;
+    z-index: 2000; /* ודא שה-z-index גבוה כדי שהתפריט ישאר מעל תכנים אחרים בעמוד */
+    font-size: 16px;
+    font-family: Calibri;
+    align-items: center;
+    color: saddlebrown;
+    display: flex;
+    justify-content: center;
+}
+
+    .mainNav .nav-content {
+        height: 100px;
+        width: 100%;
+        max-width: 1280px;
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        justify-content: center;
+         padding:0 20px;
+    }
+
+    .mainNav .logo {
+        margin-top: 15px;
+        height: 70px;
+        margin-right: auto; /* מיישר את הלוגו לשמאל */
+    }
+
+    .mainNav > ul {
+        display: block;
+        position: relative;
+        top: 18px;
+        margin: auto;
+        width: 700px;
+    }
+
+        .mainNav > ul > li {
+            display: inline-block;
+            text-align: center;
+            width: 100px;
+            height: 40px;
+        }
+
+    .mainNav ul li a {
+        text-decoration: none;
+        color: #dc7876;
+        font-size: 1.6em;
+    }
+
+    .mainNav ul li ul {
+        display: none;
+        position: absolute;
+        padding-right: 0px;
+        top: 40px;
+        width: 100px;
+        border: 0.5px solid #FAECDD;
+        border-top: 0px;
+        border-radius: 0px 0px 30px 30px;
+        background-color: #FAECDD;
+        transform: translateX(50%);
+    }
+
+        .mainNav ul li ul li {
+            display: block;
+            padding: 5px;
+            text-align: center;
+            font-weight: 400;
+        }
+
+    .mainNav ul li:hover ul {
+        display: block;
+        filter: drop-shadow(2px 2px 2px #bdafa5);
+    }
+
+    .mainNav ul li ul li:hover {
+        background-color: #FBF8F0;
+    }
+
+    .mainNav ul li ul li:last-child:hover {
+        border-radius: 0px 0px 30px 30px;
+    }
+
+    .mainNav ul li ul a {
+        text-decoration: none;
+        color: #dc7876;
+        font-size: 1.2em;
+    }
+
+    .mainNav ul {
+        display: flex; /* Flexbox layout */
+        justify-content: center; /* Center items horizontally */
+        flex-grow: 1;
+        list-style: none; /* Remove bullets */
+        padding: 0;
+        margin: 0;
+        gap: 30px; /* Add gap between menu items */
+    }
+
+        .mainNav ul li {
+            position: relative; /* For positioning the dropdown */
+            margin: 0 15px; /* Equal spacing between items */
+        }
+
+            .mainNav ul li a {
+                display: block;
+                color: #5d4037;
+                text-decoration: none;
+                padding: 20px;
+                text-align: center;
+            }
+
+                .mainNav ul li a:hover {
+                    background-color: #e0d7d3;
+                    border-radius: 5px;
+                }
+
+            .mainNav ul li ul.dropdown {
+                margin-right: 50px;
+                right: 30px;
+                width: 160px; 
+                display: none;
+                position: absolute;
+                top: 100%; /* מיקום התפריט הפנימי בדיוק מתחת לתפריט החיצוני */
+                left: 0;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* הוספת צל לתפריט הנפתח */
+                list-style: none;
+                border-radius: 5px; /* פינות מעוגלות */
+                z-index: 99;
+                text-align: center; /* טקסט מיושר למרכז בתפריט הנפתח */
+                float: right;
+            }
+
+            .mainNav ul li:hover ul.dropdown {
+                display: block; /* Show dropdown on hover */
+            }
+
+            .mainNav ul li ul.dropdown li {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding-left: 0px;
+                padding-right: 0px;
+                margin-left: 0px;
+                margin-right: 0px;
+                width: 100%;
+                text-align: center; /* Center text in dropdown items */
+            }
+
+                .mainNav ul li ul.dropdown li a {
+                    display: block;
+                    padding: 8px 16px;
+                    color: #5d4037;
+                    text-decoration: none;
+                    text-align: center; /* Center text */
+                }
+
+                    .mainNav ul li ul.dropdown li a:hover {
+                        font-weight: bold; /* Make text bold on hover */
+                    }
+
+                .mainNav ul li ul.dropdown li:last-child {
+                    border-radius: 0 0 0 0; /* פינות עגולות רק לפריט האחרון */
+                }
+
+
+/* home */
+#homeMain {
+padding-top: 50px;
+height: max-content;
+min-height: 400px;
+width: 75%;
+position: relative;
+text-align: center;
+}
+
+#homeMain h1 {
+color:  rgba(44, 101, 191);
+}
+
+#homeMain h2  {
+color: orange;
+}
+
+#homeMain h3{
+    font-size: smaller;
+    color: #5d4037;
+}
+
+video {
+    padding-top: 50px;
+    width: 800px;
+    height: auto;
+    padding-right: 15px;
+}
+
+
+.breadCrumbs {
+    padding-top: 150px;
+    z-index: 2; /* layers showing */
+    position: relative;
+    float: right;
+    width: 100%;
+    display: flex;
+    justify-content: right; /* Center align the breadcrumbs */
+}
+
+    .breadCrumbs ol {
+        list-style: none;
+        display: flex;
+        justify-content: flex-start; /* Align items to the start */
+        align-items: center;
+    }
+
+        .breadCrumbs ol li {
+            margin: 0 5px;
+        }
+
+            .breadCrumbs ol li a {
+                color: #5d4037;
+                text-decoration: none;
+                font-size: 18px;
+                transition: font-weight 0.3s; /* Smooth transition for font weight change */
+            }
+
+                .breadCrumbs ol li a:hover {
+                    text-decoration: none; /* Remove underline on hover */
+                    font-weight: bold; /* Bold text on hover */
+                }
+
+            .breadCrumbs ol li::after {
+                content: ">";
+                margin: 0 5px;
+                color: #5d4037;
+            }
+
+            .breadCrumbs ol li:last-child::after {
+                content: ""; /* Remove the arrow after the last item */
+            }
+
+            /* הוספת קו תחתון לעמוד הנוכחי */
+            .breadCrumbs ol li a.current-page {
+                border-bottom: 2px solid #5d4037; /* Add underline for current page */
+            }
+
+/* טקסט מבוא */
+.intro-text {
+    position: relative;
+    text-align: center;
+ 
+}
+
+    .intro-text h1 {
+        font-size: 32px;
+        color: #5d4037;
+    }
+
+    .intro-text p {
+        font-size: 25px;
+        color: #5d4037;
+    }
+
+/* תוכן ראשי */
+.main-content {
+    margin-top: 100px; /* Adjust for the height of the nav and breadcrumbs */
+    width: 100%;
+}
+
+.row {
+    position: relative;
+    top: 50px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px; /* Space from the top of the main content */
+}
+
+.image-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    display: flex; /* Centering */
+    justify-content: center; /* Centering */
+    align-items: center; /* Centering */
+    margin: 10px; /* Add margin to create spacing around image containers */
+    border-radius: 15px; /* Make corners rounded */
+}
+
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.hover-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.4s, opacity 0.4s;
+    border-radius: 15px; /* Make corners rounded */
+}
+
+.image-container:hover .hover-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+#hit {
+    padding-right: 400px;   
+    }
+    #hit img {
+        width: 50%;
+        height: auto;
+    }
+    #hit a {
+padding-right: 120px;
+text-decoration: none;
+    }
+
+footer {
+    background-color:powderblue;
+    width: 1519.2px;
+    height:8%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+
+.footerBar ul {
+
+    text-align: center;
+    font-size: x-large;
+    font-weight: bolder;
+    padding: 35px;
+    list-style-type: none; /* Remove bullets */
+    margin: 0; /* Remove default margin */
+}
+
+    .footerBar ul li {
+
+        color: steelblue;
+        display: inline; /* Display items in a row */
+        padding: 10px;
+    }
+
+        .footerBar ul li a {
+            padding-left: 40px;
+            padding-right: 40px;
+            color: steelblue;
+            text-decoration: none;
+            text-align: center;
+        }
+
+            .footerBar ul li a:hover {
+                height: 90px;
+                border-radius: 15px; 
+                background-color:white;
+                opacity: 60%;
+                color: #2c65bf;
+            }
+/*  המשפט שמתחת לתפריט פוטר */
+p.by{
+    color: #2c65bf;
+    font-size: smaller;
+}
+    /*  מפת האתר */
+    td, th {
+        padding: 5px !important;
+        word-spacing: 5px;  /* הוספתי*/
+            }
+
+    .webMap {
+        width: 90%;
+        height: 15%;
+        margin-top: 36px;
+        margin-right: 34px;
+        text-align: center;
+    
+    }
+    .webMap table tr th a{
+text-decoration: none;  /* הוספתי*/
+    }
+    .webMap table tr td a{
+        text-decoration: none;  /* הוספתי*/
+    }  
+
+.mapTitle {
+    text-align: center;
+}
+
+ /* רקע כתום לטפסים*/
+div.container {
+    background-color: rgb(255, 165, 0, 0.3);
+    border-radius: 30px;
+    padding: 35px;
+}
+
+.outer-container {
+    width: auto;
+}
+
+h3 , h4 {
+    font-weight: normal;
+}
+/* טפסים */
+/* Add a red asterisk after elements with class 'asterisk': */
+.asterisk::after {
+    content: '*';
+    color: red;
+    font-weight: bold;
+}
+
+.sendForm {
+    font-size: larger;
+    background-color: lightskyblue;
+    border-radius:20px;
+    font-family:Rubik;
+}
+
+.bodyForm {
+    background-image: url('../images/formReka.jpeg');
+    background-size: cover; /* מכסה את כל המסך */
+    background-repeat: no-repeat; /* לא לחזור על התמונה */
+    height: 100%;
+    width: 100%;
+}
